@@ -1,0 +1,137 @@
+/* Mobile & Tablet */
+
+@media (max-width: 1023px) {
+    :root {
+        --header-heigth: 68px;
+        --navbar-height: 0px;
+    }
+    .hide-on-mobile-tablet {
+        display:none;
+    }
+
+    .header__cart {
+        width: 74px;
+        text-align: right;
+    }
+    .header {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        width: 100%;
+    }
+
+    .app__container {
+        margin-top: calc(var(--header-heigth) + 46px);
+    }
+
+    .app__content {
+        padding-top: 8px;
+    }
+
+
+    .header__cart-list {
+        position: fixed;
+        top: var(--header-heigth);
+        right: 0;
+        width: 100%;
+        padding: 0 calc((100% - 644px) / 2);
+    }
+
+    .header__cart-list::after {
+        display:none;
+
+    }
+
+    .header__sort-bar {
+        display: flex;
+    }
+
+    .mobile-category {
+        display: block;
+    }
+    
+}
+
+/* ?Tablet */
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display:none;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display:none;
+    }
+    .header-with-search{ 
+        justify-content: space-between;
+    }
+
+    .header__logo, .header__cart {
+        width: unset;
+    }
+
+    .header__search {
+        position: fixed;
+        top: var(--header-heigth);
+        left: 0;
+        right: 0;
+        display: none;
+        height: 46px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        z-index: 11;
+        padding: 0 16px;
+        animation: search linear 0.3s;
+    }
+
+    #mobile-search-checkbox:checked ~ .header__search {
+        display: flex;
+    }
+
+    .header__search-history {
+        position: fixed;
+        top: calc(var(--header-heigth) + 46px);
+        width: 100%;
+        left: 0;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .pagination-item{
+        margin: 0;
+    }
+
+    .pagination-item__link{
+        --hight: 28px;
+        font-size: 1.6rem;
+        min-width: 36px;
+    }
+
+    .row.sm-gutter.app__content{
+        margin: 0 4px;
+    }
+    .header-mobile-search {
+        display: block;
+    }
+    .header__logo-img{
+        width: 110px;
+    }
+    
+    .grid.wide.footer__content {
+        padding: 0 16px;
+    }
+    @keyframes search {
+        from {
+            opacity: 0;
+            top: calc(var(--header-heigth) / 2);
+        }
+        to {
+            opacity: 1;
+
+            top: var(--header-heigth);
+        }
+    }
+}
